@@ -139,15 +139,50 @@
 
 // arr.sort()
 
-//Задача№1
-function fibonachi(count) {
-    let fib = [];
-    for(let i=0; i<count; i++) {
-        if(i==0) fib[i] = 1;
-        else if(i==1) fib[i] = 2;
-        else fib[i] = fib[i-2] + fib[i-1];
+// //Задача№1:Число Фибоначи
+// function fibonachi(count) {
+//     let fib = [];
+//     for(let i=0; i<count; i++) {
+//         if(i==0) fib[i] = 1;
+//         else if(i==1) fib[i] = 2;
+//         else fib[i] = fib[i-2] + fib[i-1];
+//     }
+//     return fib;
+// }
+// let f = fibonachi(20);
+// console.log(f)
+
+// Задача№:Вычислить факториал числа
+
+// function factorial(n) {
+//     let fact = 1;
+//     if(n==0) return fact;
+//     for(let i=1; i<=n; i++) {
+//         fact*= i;
+//     }
+//     return fact;
+// }
+// let a = factorial(0)
+// console.log(a)
+// let b = factorial(3)
+// console.log(b)
+// let c = factorial(8)
+// console.log(c)
+
+
+// Задача№3
+
+let addAndMul = function(num) {
+    num += ""; //Добавить пустую строку
+    let add = 0, mul = 1;
+    for(let i = 0; i<num.length; i++) {
+        add += +num[i]; // +num[] превращаем строку в число и суммируем
+        mul *= num[i]; //+ можно не указывать, будет работать без него!Почему?
     }
-    return fib;
+    return {
+        "Сумма": add,
+        "Произведение": mul
+    }  
 }
-let f = fibonachi(10);
-console.log(f)
+console.log(addAndMul("795")) //Число можно вводить как в ковычках "", так и без
+console.log(addAndMul(795)) //Число можно вводить как в ковычках "", так и без
