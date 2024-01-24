@@ -139,7 +139,9 @@
 
 // arr.sort()
 
+
 // //Задача№1:Число Фибоначи
+
 // function fibonachi(count) {
 //     let fib = [];
 //     for(let i=0; i<count; i++) {
@@ -152,7 +154,7 @@
 // let f = fibonachi(20);
 // console.log(f)
 
-// Задача№:Вычислить факториал числа
+// Задача№2:Вычислить факториал числа
 
 // function factorial(n) {
 //     let fact = 1;
@@ -172,17 +174,52 @@
 
 // Задача№3
 
-let addAndMul = function(num) {
-    num += ""; //Добавить пустую строку
-    let add = 0, mul = 1;
-    for(let i = 0; i<num.length; i++) {
-        add += +num[i]; // +num[] превращаем строку в число и суммируем
-        mul *= num[i]; //+ можно не указывать, будет работать без него!Почему?
+// let addAndMul = function(num) {
+//     num += ""; //Добавить пустую строку
+//     let add = 0, mul = 1;
+//     for(let i = 0; i<num.length; i++) {
+//         add += +num[i]; // +num[] превращаем строку в число и суммируем
+//         mul *= num[i]; //+ можно не указывать, будет работать без него!Почему?
+//     }
+//     return {
+//         "Сумма": add,
+//         "Произведение": mul
+//     }  
+// }
+// console.log(addAndMul("795")) //Число можно вводить как в ковычках "", так и без
+// console.log(addAndMul(795)) //Число можно вводить как в ковычках "", так и без
+
+
+//Задача№4 Число пепервернуть в обратную сторону z.b. 3486
+
+// function reverse(number) {
+//     number += "";
+//     let reverseNumber = ""; //Записывать сюда результат
+//     for( let i=number.length-1; i>=0; i--) { //length-1 это длина поледнего индекса, 4длина, отчет с 0.
+//         reverseNumber += number[i]
+//     } 
+//     return + reverseNumber
+// }
+// console.log(reverse(3486))
+
+
+//Задача№5 Посчитать количество четных и нечетных чисел.
+
+function reverse(number) {
+    number += "";
+    let chet = 0, nechet = 0;
+    for(let i = 0; i<number.length; i++) {
+        if(number[i] % 2 == 0) chet++;
+        else nechet++;
     }
     return {
-        "Сумма": add,
-        "Произведение": mul
-    }  
+        "Четные цифры": chet,
+        "Нечетные цифры": nechet,
+    }
 }
-console.log(addAndMul("795")) //Число можно вводить как в ковычках "", так и без
-console.log(addAndMul(795)) //Число можно вводить как в ковычках "", так и без
+console.log(reverse(3486954))
+
+
+
+
+
