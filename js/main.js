@@ -151,7 +151,7 @@
 //     }
 //     return fib;
 // }
-// let f = fibonachi(20);
+// let f = fibonachi(6);
 // console.log(f)
 
 // Задача№2:Вычислить факториал числа
@@ -205,19 +205,41 @@
 
 //Задача№5 Посчитать количество четных и нечетных чисел.
 
-function reverse(number) {
-    number += "";
-    let chet = 0, nechet = 0;
-    for(let i = 0; i<number.length; i++) {
-        if(number[i] % 2 == 0) chet++;
-        else nechet++;
+// function reverse(number) {
+//     number += "";
+//     let chet = 0, nechet = 0;
+//     for(let i = 0; i<number.length; i++) {
+//         if(number[i] % 2 == 0) chet++;
+//         else nechet++;
+//     }
+//     return {
+//         "Четные цифры": chet,
+//         "Нечетные цифры": nechet,
+//     }
+// }
+// console.log(reverse(3486954))
+
+// Задача№6 Угадать случайное число от 0 до 100 за 10 попыток
+
+function randomNumber() {
+    let number = Math.floor(Math.random() * 100);
+    for(let count=1;count<=10; count++) {
+        let result = +prompt(`Попытка №${count}, Введите числа:`)
+        if(result == number) {
+            return alert(`Вы угадали число! Попытка: ${count}, Число: ${number}`)
+        } else if(result < number) {
+            alert(`Ваше число ${result} меньше загаданного!`)
+        
+        } else if(result > number) {
+            alert(`Ваше число ${result} больше загаданного!`)
+        }        
     }
-    return {
-        "Четные цифры": chet,
-        "Нечетные цифры": nechet,
-    }
+    return alert(`Вы не угадали число! Число: ${number}`)
 }
-console.log(reverse(3486954))
+randomNumber()
+
+
+
 
 
 
