@@ -221,22 +221,100 @@
 
 // Задача№6 Угадать случайное число от 0 до 100 за 10 попыток
 
-function randomNumber() {
-    let number = Math.floor(Math.random() * 100);
-    for(let count=1;count<=10; count++) {
-        let result = +prompt(`Попытка №${count}, Введите числа:`)
-        if(result == number) {
-            return alert(`Вы угадали число! Попытка: ${count}, Число: ${number}`)
-        } else if(result < number) {
-            alert(`Ваше число ${result} меньше загаданного!`)
+// function randomNumber() {
+//     let number = Math.floor(Math.random() * 100);
+//     for(let count=1;count<=10; count++) {
+//         let result = +prompt(`Попытка №${count}, Введите числа:`)
+//         if(result == number) {
+//             return alert(`Вы угадали число! Попытка: ${count}, Число: ${number}`)
+//         } else if(result < number) {
+//             alert(`Ваше число ${result} меньше загаданного!`)
         
-        } else if(result > number) {
-            alert(`Ваше число ${result} больше загаданного!`)
-        }        
-    }
-    return alert(`Вы не угадали число! Число: ${number}`)
+//         } else if(result > number) {
+//             alert(`Ваше число ${result} больше загаданного!`)
+//         }        
+//     }
+//     return alert(`Вы не угадали число! Число: ${number}`)
+// }
+// randomNumber()
+
+//Lesson#9
+
+
+//  let a = new Date(2015,6,21,10,51,54,458) //Создаем новый объект класса Date
+//  console.log(a)
+//  console.log(a.getFullYear()) //Метод получения года
+//  console.log(a.getMonth()) //Метод получения месяца(месяц начинается с нуля)
+//  console.log(a.getDate()) //Метод получения даты 
+//  console.log(a.getHours()) //Метод получения часы
+//  console.log(a.getMinutes()) //Метод получения минуты
+//  console.log(a.getSeconds()) //Метод получения секунды
+//  console.log(a.getMilliseconds()) //Метод получения миллисекунды
+//  console.log(a.getDay()) //Метод получения дня недели,отчет с воскресенья начинается(от 0 до 6)
+//  console.log(a.getTime()) //Метод получения время в миллисекундах от даты 01.01.1970
+//  console.log(a.getTimezoneOffset()) //Метод получения разницы между местным временем и Гринвич
+//  console.log(a.setTime(500000)) //Метод установка времени в миллисекундах
+//  console.log(a.getTime())
+//  console.log(a)
+
+
+ //Автоизменение даты
+
+//  let a = +new Date() //Получаем текущую дату
+//  //a.setDate(a.getDate()+2) //С помощью этих методов (setDate and getDate) можно изменять дату,часы,минуты и.т.д.
+// //  console.log(+a) //С помощь + можно преобразовать в миллисекунды от даты 01.01.1970.
+//  for(let i=0; i<150; i++) {
+//     console.log(0)
+//  }
+//  let b = +new Date()
+//  console.log(b-a) //Сколько по времени выполняется цикл кода в миллисекундах
+
+
+//Использование метода Date.now
+
+
+//  let a = Date.now(new Date()) //Получаем текущую дату
+//  //a.setDate(a.getDate()+2) //С помощью этих методов (setDate and getDate) можно изменять дату,часы,минуты и.т.д.
+// //  console.log(+a) //С помощь + можно преобразовать в миллисекунды от даты 01.01.1970.
+//  for(let i=0; i<150; i++) {
+//     console.log(0)
+//  }
+
+//  let b = +new Date()
+//  console.log(b-a) //Сколько по времени выполняется цикл кода в миллисекундах
+
+
+ //Форматирование и способы вывода даты
+
+//  let a = new Date(2014,11,31,12,30,0)
+//  console.log(a)
+//  console.log(a.toDateString())
+//  console.log(a.toTimeString())
+//  let options = {
+//     era: "long",
+//     year: "numeric",
+//     month: "long",
+//     day: "numeric",
+//     weekday: "long",
+//     timezone: "UTC",
+//     hour: "numeric",
+//     minute: "numeric",
+//     second: "numeric",
+//  }
+//  console.log(a.toLocaleString("ru", options))
+
+ /**
+  * Функция преоброзует строку с временем минуты
+  * @param {string} time время в виде строки, например "02:08".
+  *  Может быть в диапозоне от "00:00" до "23:59"
+  */
+ //Lesson#10 Документация кода и Исключения,Супер JavaScript,Основы.
+
+ function timeToMinute(time) { //На входе строка.На выходе число.
+   
 }
-randomNumber()
+timeToMinute()
+
 
 
 
