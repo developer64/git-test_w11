@@ -303,17 +303,89 @@
 //  }
 //  console.log(a.toLocaleString("ru", options))
 
+
+ //Lesson#10 Документация кода и Исключения,Супер JavaScript,Основы.
+
  /**
   * Функция преоброзует строку с временем минуты
   * @param {string} time время в виде строки, например "02:08".
   *  Может быть в диапозоне от "00:00" до "23:59"
+  * @return {number} целое число в минутах.z.b. time ="02:00" вернет 128.
   */
- //Lesson#10 Документация кода и Исключения,Супер JavaScript,Основы.
 
- function timeToMinute(time) { //На входе строка.На выходе число.
-   
+
+//  function timeToMinute(time) { //На входе строка.На выходе число.
+//    try {
+//     let hour = +time.split(":")[0]
+//     let minute = +time.split(":")[1]
+//     if(!(hour>=0 && hour<=23) || !(minute>=0 && minute<=59)) 
+//     {
+//      throw new RangeError("Аргумент должен быть в формате 'hh:mm' -'hh' и 'mm' должны быть от 0 до 59. 'hh' и 'mm' должны быть числами и разделяться знаком':' ") 
+//     } 
+//     return hour*60+minute
+//    } catch(erorr) {
+//     console.log(erorr)
+//    }
+// }
+// console.log(timeToMinute("20:08"))
+
+
+// Lesson#11 ООПб Прототипы, Конструктор, Класс, Наследование, Супер JavaScript, Осногвы
+
+// Вариант№1
+
+// let admin = {
+//     rules: 777,
+//     isAdmin() {
+//       console.log("Я админ " + this.name + " мои права" +this.rules)  
+//     }
+// }
+// function User(name,age) {
+//     this.name = name;
+//     this.age = age;
+//     this.__proto__ = admin;
+//     this.myInfo = function() {
+//         console.log("Меня зовут " +this.name+ ", мне "+this.age+" лет")
+//     }
+// }
+// let u1 = new User("Peter", 21)
+// let u2 = new User("Kate", 19)
+// let u3 = new User("Masha", 20)
+
+// Вариант№2 Класс
+
+class User {
+    constructor(name,age,admin=false) {
+        this.name = name;
+        this.age = age;
+        this.admin = admin;
+    }
+    myInfo() {
+        console.log("Меня зовут " +this.name+ ", мне "+this.age+" лет")
+        if(this.admin == true)
+        console.log("Я админ")
+    }
 }
-timeToMinute()
+class Moderator extends User {
+    constructor(name, age, admin=false, moder=true) {
+        super(name,age,admin)
+        this.moder = moder;
+    }
+    static addPost() {
+        console.log("New Post")
+    }
+    static master =true; //Это свойство работает с классом, а не с объектом
+    myInfo() {
+        super.myInfo();
+            console.log("Я модератор")  
+    }
+}
+let u1 = new User("Peter", 21)
+let u2 = new User("Kate", 19, true)
+let u3 = new User("Masha", 20)
+let m1 = new Moderator("Ivan", 22)
+
+
 
 
 
