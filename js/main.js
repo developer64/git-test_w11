@@ -456,7 +456,7 @@ console.log(people2.getFio())
 console.log(people1.getBirthday())
 console.log(people2.getBirthday())
 
-
+// Lesson#12 Возможности ES6 или ECMAScript 2015, Супер JavaScript, Основы. 
 
 
 
